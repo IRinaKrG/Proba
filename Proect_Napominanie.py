@@ -6,7 +6,6 @@ import datetime
 import time
 import pygame
 
-
 window = Tk()
 window.title("Наименование")
 
