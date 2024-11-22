@@ -2,6 +2,10 @@ print("Hallo, world!")
 
 print("Hallo, GitHub!")
 
+x = 5
+y = 10
+print(x + y)
+
 from tkinter import *
 from tkinter import messagebox as mb
 
