@@ -1,4 +1,3 @@
-from cProfile import label
 from tkinter import *
 from tkinter import messagebox as mb
 from tkinter import simpledialog as sd
@@ -26,10 +25,6 @@ def set():
             mb.showerror("Ошибка", "Неверный формат времени")
 
 
-window = Tk()
-window.title("Наименование")
-
-
 def check():
     global t
     if t:
@@ -39,10 +34,21 @@ def check():
             t = 0
     window.after(10000, check)
 
+
+def play_snd():
+    pygame.mixer.init()
+    pygame.mixer.music.load("reminder.mp3")
+    pygame.mixer.music.play()
+
+window = Tk()
+window.title("Наименование")
+
 label = Label(text="Установите напоминание", font=("Arial", 14))
 label.pack(pady=10)
 
 set_button = Button(text='Установить напоминание', command=set)
 set_button.pack()
+
+check()
 
 window.mainloop()
